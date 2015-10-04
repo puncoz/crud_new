@@ -1,0 +1,25 @@
+<form name="loginForm" novalidate="" ng-submit="loginUser(loginForm)">
+
+	<h3>Login</h3>
+
+	<label class="item item-input item-stacked-label" ng-class="{'has-error' : loginForm.username.$dirty && loginForm.username.$invalid , 'has-success': loginForm.username.$dirty && loginForm.username.$valid }">
+		<span class="input-label">Username
+			<span ng-show="loginForm.username.$dirty && loginForm.username.$error" ng-messages="loginForm.username.$error" ng-messages-include="templates/form-errors.html"></span>
+		</span>
+		<input type="text" name="username" ng-model="form.username" placeholder="ram.thapa" required>
+	</label>
+
+	<label class="item item-input item-stacked-label" ng-class="{'has-error' : loginForm.password.$dirty && loginForm.password.$invalid , 'has-success': loginForm.password.$dirty && loginForm.password.$valid }">
+		<span class="input-label">Password
+			<span ng-show="loginForm.password.$dirty && loginForm.password.$error" ng-messages="loginForm.password.$error" ng-messages-include="templates/form-errors.html">
+				<span class="form-error-message" ng-message="minlength">Password must be at least 8 characters.</span>
+			</span>
+		</span>
+		<input type="password" name="password" ng-model="form.password" placeholder="password" ng-minlength="8" required>
+	</label>
+
+	<button class="button button-block button-balanced" ng-disabled="loginForm.$invalid">
+		Let me in!
+	</button>
+
+</form>

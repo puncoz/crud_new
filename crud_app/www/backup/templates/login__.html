@@ -1,0 +1,80 @@
+<ion-view view-title="InfoCrud App" hide-nav-bar="true" class="login-page">
+	<ion-content scroll="true">
+
+		<!-- Logo -->
+		<div class="padding logo">
+			<h1>InfoCrud App</h1>
+		</div>
+
+		<div class="form">
+
+			<div class="list">
+
+				<form name="loginRegForm" novalidate="" ng-submit="submitForm(loginRegForm)">
+
+					<h3>
+					{{ form.isRegister ? 'Register' : 'Login' }}
+					</h3>
+
+					<label ng-show="form.isRegister" class="item item-input item-stacked-label" ng-class="{'has-error' : loginRegForm.firstname.$dirty && loginRegForm.firstname.$invalid , 'has-success': loginRegForm.firstname.$dirty && loginRegForm.firstname.$valid }">
+						<span class="input-label">First Name
+							<span ng-show="loginRegForm.firstname.$dirty && loginRegForm.firstname.$error" ng-messages="loginRegForm.firstname.$error" ng-messages-include="templates/form-errors.html"></span>
+						</span>
+						<input type="text" name="firstname" ng-model="form.firstname" placeholder="Ram" required>
+					</label>
+
+					<label ng-show="form.isRegister" class="item item-input item-stacked-label" ng-class="{'has-error' : loginRegForm.lastname.$dirty && loginRegForm.lastname.$invalid , 'has-success': loginRegForm.lastname.$dirty && loginRegForm.lastname.$valid }">
+						<span class="input-label">Last Name
+							<span ng-show="loginRegForm.lastname.$dirty && loginRegForm.lastname.$error" ng-messages="loginRegForm.lastname.$error" ng-messages-include="templates/form-errors.html"></span>
+						</span>
+						<input type="text" name="lastname" ng-model="form.lastname" placeholder="Thapa" required>
+					</label>
+
+					<label ng-show="form.isRegister" class="item item-input item-stacked-label" ng-class="{'has-error' : loginRegForm.email.$dirty && loginRegForm.email.$invalid , 'has-success': loginRegForm.email.$dirty && loginRegForm.email.$valid }">
+						<span class="input-label">Email
+							<span ng-show="loginRegForm.email.$dirty && loginRegForm.email.$error" ng-messages="loginRegForm.email.$error" ng-messages-include="templates/form-errors.html"></span>
+						</span>
+						<input type="email" name="email" ng-model="form.email" placeholder="ram@somedomain.com" ng-pattern="" required>
+					</label>
+
+					<label class="item item-input item-stacked-label" ng-class="{'has-error' : loginRegForm.username.$dirty && loginRegForm.username.$invalid , 'has-success': loginRegForm.username.$dirty && loginRegForm.username.$valid }">
+						<span class="input-label">Username
+							<span ng-show="loginRegForm.username.$dirty && loginRegForm.username.$error" ng-messages="loginRegForm.username.$error" ng-messages-include="templates/form-errors.html"></span>
+						</span>
+						<input type="text" name="username" ng-model="form.username" placeholder="ram.thapa" required>
+					</label>
+
+					<label class="item item-input item-stacked-label" ng-class="{'has-error' : loginRegForm.password.$dirty && loginRegForm.password.$invalid , 'has-success': loginRegForm.password.$dirty && loginRegForm.password.$valid }">
+						<span class="input-label">Password
+							<span ng-show="loginRegForm.password.$dirty && loginRegForm.password.$error" ng-messages="loginRegForm.password.$error" ng-messages-include="templates/form-errors.html">
+								<span class="form-error-message" ng-message="minlength">Password must be at least 8 characters.</span>
+							</span>
+						</span>
+						<input type="password" name="password" ng-model="form.password" placeholder="password" ng-minlength="8" required>
+					</label>
+
+					<label ng-show="form.isRegister" class="item item-input item-stacked-label" ng-class="{'has-error' : loginRegForm.confirmpass.$dirty && loginRegForm.confirmpass.$invalid , 'has-success': loginRegForm.confirmpass.$dirty && loginRegForm.confirmpass.$valid }">
+						<span class="input-label">Confirm Password
+							<span ng-show="loginRegForm.confirmpass.$dirty && loginRegForm.confirmpass.$error" ng-messages="loginRegForm.confirmpass.$error" ng-messages-include="templates/form-errors.html">
+								<span class="form-error-message" ng-message="minlength">Password must be at least 8 characters.</span>
+							</span>
+						</span>
+						<input type="password" name="confirmpass" ng-model="form.confirmpass" placeholder="password" ng-minlength="8" required>
+					</label>
+
+					<button class="button button-block" ng-class="{'button-positive': !form.isRegister, 'button-balanced': form.isRegister}" ng-disabled="loginRegForm.$invalid">
+						{{ form.isRegister ? 'Register' : 'Let me in!' }}
+					</button>
+
+					<h5 ng-click="form.isRegister = !form.isRegister">
+						{{ form.isRegister ? 'Have an account?? Log in!' : 'Need an account?? Register!' }}
+					</h5>
+
+				</form>
+
+			</div>
+
+		</div>
+
+	</ion-content>
+</ion-view>

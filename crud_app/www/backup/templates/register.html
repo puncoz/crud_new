@@ -1,0 +1,55 @@
+<form name="registerForm" novalidate="" ng-submit="registerUser(registerForm)">
+
+	<h3>Register</h3>
+
+	<label class="item item-input item-stacked-label" ng-class="{'has-error' : registerForm.firstname.$dirty && registerForm.firstname.$invalid , 'has-success': registerForm.firstname.$dirty && registerForm.firstname.$valid }">
+		<span class="input-label">First Name
+			<span ng-show="registerForm.firstname.$dirty && registerForm.firstname.$error" ng-messages="registerForm.firstname.$error" ng-messages-include="templates/form-errors.html"></span>
+		</span>
+		<input type="text" name="firstname" ng-model="form.firstname" placeholder="Ram" required>
+	</label>
+
+	<label class="item item-input item-stacked-label" ng-class="{'has-error' : registerForm.lastname.$dirty && registerForm.lastname.$invalid , 'has-success': registerForm.lastname.$dirty && registerForm.lastname.$valid }">
+		<span class="input-label">Last Name
+			<span ng-show="registerForm.lastname.$dirty && registerForm.lastname.$error" ng-messages="registerForm.lastname.$error" ng-messages-include="templates/form-errors.html"></span>
+		</span>
+		<input type="text" name="lastname" ng-model="form.lastname" placeholder="Thapa" required>
+	</label>
+
+	<label class="item item-input item-stacked-label" ng-class="{'has-error' : registerForm.email.$dirty && registerForm.email.$invalid , 'has-success': registerForm.email.$dirty && registerForm.email.$valid }">
+		<span class="input-label">Email
+			<span ng-show="registerForm.email.$dirty && registerForm.email.$error" ng-messages="registerForm.email.$error" ng-messages-include="templates/form-errors.html"></span>
+		</span>
+		<input type="email" name="email" ng-model="form.email" placeholder="ram@somedomain.com" ng-pattern="" required>
+	</label>
+
+	<label class="item item-input item-stacked-label" ng-class="{'has-error' : registerForm.username.$dirty && registerForm.username.$invalid , 'has-success': registerForm.username.$dirty && registerForm.username.$valid }">
+		<span class="input-label">Username
+			<span ng-show="registerForm.username.$dirty && registerForm.username.$error" ng-messages="registerForm.username.$error" ng-messages-include="templates/form-errors.html"></span>
+		</span>
+		<input type="text" name="username" ng-model="form.username" placeholder="ram.thapa" required>
+	</label>
+
+	<label class="item item-input item-stacked-label" ng-class="{'has-error' : registerForm.password.$dirty && registerForm.password.$invalid , 'has-success': registerForm.password.$dirty && registerForm.password.$valid }">
+		<span class="input-label">Password
+			<span ng-show="registerForm.password.$dirty && registerForm.password.$error" ng-messages="registerForm.password.$error" ng-messages-include="templates/form-errors.html">
+				<span class="form-error-message" ng-message="minlength">Password must be at least 8 characters.</span>
+			</span>
+		</span>
+		<input type="password" id="password" name="password" ng-model="form.password" placeholder="password" ng-minlength="8" required>
+	</label>
+
+	<label class="item item-input item-stacked-label" ng-class="{'has-error' : registerForm.confirmpass.$dirty && registerForm.confirmpass.$invalid , 'has-success': registerForm.confirmpass.$dirty && registerForm.confirmpass.$valid }">
+		<span class="input-label">Confirm Password
+			<span ng-show="registerForm.confirmpass.$dirty && registerForm.confirmpass.$error" ng-messages="registerForm.confirmpass.$error" ng-messages-include="templates/form-errors.html">
+				<span class="form-error-message" ng-message="compareTo">Doesn't match</span>
+			</span>
+		</span>
+		<input type="password" id="confirmpass" name="confirmpass" ng-model="form.confirmpass" placeholder="password" compare-to="form.password" required>
+	</label>
+
+	<button class="button button-block button-balanced" ng-disabled="registerForm.$invalid">
+		Register
+	</button>
+
+</form>

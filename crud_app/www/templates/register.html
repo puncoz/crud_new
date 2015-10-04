@@ -1,0 +1,28 @@
+<form name="registerForm" novalidate="" ng-submit="registerUser(registerForm)">
+
+	<h3>Register</h3>
+
+	<ion-md-input placeholder="Firstname" id="firstname" name="firstname" ng-model="form.firstname" highlight-color="dark" type="text" required="true" ng-required="true"></ion-md-input>
+	<span ng-show="registerForm.firstname.$dirty && registerForm.firstname.$error" ng-messages="registerForm.firstname.$error" ng-messages-include="templates/form-errors.html"></span>
+
+	<ion-md-input placeholder="Lastname" id="lastname" name="lastname" ng-model="form.lastname" highlight-color="dark" type="text" required="true" ng-required="true"></ion-md-input>
+	<span ng-show="registerForm.lastname.$dirty && registerForm.lastname.$error" ng-messages="registerForm.lastname.$error" ng-messages-include="templates/form-errors.html"></span>
+
+	<ion-md-input placeholder="Email" id="email" name="email" ng-model="form.email" highlight-color="dark" type="email" required="true" ng-required="true"></ion-md-input>
+	<span ng-show="registerForm.email.$dirty && registerForm.email.$error" ng-messages="registerForm.email.$error" ng-messages-include="templates/form-errors.html"></span>
+
+	<ion-md-input placeholder="Username" id="username" name="username" ng-model="form.username" highlight-color="dark" type="text" required="true" ng-required="true"></ion-md-input>
+	<span ng-show="registerForm.username.$dirty && registerForm.username.$error" ng-messages="registerForm.username.$error" ng-messages-include="templates/form-errors.html"></span>
+
+	<ion-md-input placeholder="Password" id="password" name="password" ng-model="form.password" highlight-color="dark" type="password" required="true" ng-required="true" ng-minlength="8"></ion-md-input>
+	<span ng-show="registerForm.password.$dirty && registerForm.password.$error" ng-messages="registerForm.password.$error" ng-messages-include="templates/form-errors.html">
+		<span class="form-error" ng-message="minlength">Password must be at least 8 characters.</span>
+	</span>
+
+	<div class="padding-top">
+		<button class="button button-full button-balanced ink" ng-disabled="loginForm.$invalid">
+			Register
+		</button>
+	</div>
+
+</form>

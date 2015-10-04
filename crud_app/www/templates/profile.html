@@ -1,0 +1,49 @@
+<ion-view view-title="Profile" class="profile" cache-view="false">
+
+	<ion-content ng-class="{expanded:$scope.isExpanded}">
+
+		<div class="hero slide-up" style="background-image: url('user/img/cp/profile-cover-default.jpg');">
+            <div class="content">
+                <div class="avatar" ng-click="showProfilePhotoOption()" ng-style="{'background-image': 'url('+profPicUrl+')'}"></div>
+                <h3><a class="light">{{fullName}}</a></h3>
+                <h4>{{username}}</h4>
+            </div>
+        </div>
+
+        <div class="tabs tabs-dark tabs-icon-top static">
+            <a ui-sref="app.activity" class="tab-item">
+                <i class="icon ion-arrow-graph-up-right"></i> Activity
+            </a>
+            <a ui-sref="app.friends" class="tab-item">
+                <i class="icon ion-android-people"></i> Friends
+            </a>
+            <a ng-click="showCoverPhotoOption()" class="tab-item">
+                <i class="icon ion-images"></i> Cover Photo
+            </a>
+        </div>
+
+        <h4 class="content padding double-padding-x">Following</h4>
+        <div class="list animate-fade-slide-in-right">
+            <a ui-sref="app.friends" class="item item-avatar item-icon-right">
+                <img src="img/jon-snow.jpg">
+                <h2>Ravindra Dhakal</h2>
+                <p>Lorem ipsum dolor sit amet</p>
+                <i class="icon ion-chatbubble muted"></i>
+            </a>
+            <a ui-sref="app.friends" class="item item-avatar item-icon-right">
+                <img src="img/sansa.jpg">
+                <h2>Bishal Pradhan</h2>
+                <p>&amp; Lorem <strike>ipsum</strike> dolor sit amet</p>
+                <i class="icon ion-chatbubble muted"></i>
+            </a>
+            <a ui-sref="app.friends" class="item item-avatar item-icon-right">
+                <img src="img/tyrion.jpg">
+                <h2>Ram Bahadur</h2>
+                <p>Lorem ipsum dolor sit amet</p>
+                <i class="icon ion-chatbubble muted"></i>
+            </a>
+        </div>
+
+	</ion-content>
+
+</ion-view>

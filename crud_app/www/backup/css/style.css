@@ -1,0 +1,61 @@
+.padding-top-40 {
+	padding-top: 40px;
+}
+
+/*************************************************************************
+	L O G I N / R E G I S T E R   P A G E
+*************************************************************************/
+.login-register-page {
+	/*background: green;*/
+}
+
+.login-register-page .logo h1 {
+	margin-top:10px;
+	text-align:center;
+	color:#777 !important;
+	font-family: Verdana, Geneva, sans-serif;
+	font-weight:bold;
+	letter-spacing: -3px;
+	font-size:42px;
+
+	padding-bottom: 5px;
+	border-bottom: 1px solid #000;
+}
+
+.login-register-page h3, .login-register-page h5 {
+	text-align: center;
+}
+
+.login-register-page .form label.item {
+
+}
+.login-register-page .form label.item.has-error {
+	border-left: 5px solid #FF4444;
+	border-right: 5px solid #FF4444;
+}
+.login-register-page .form label.item.has-success {
+	border-left: 5px solid #13CE06;
+	border-right: 5px solid #13CE06;
+}
+
+.form-error-message {
+	color: #FF4444;
+	font-weight: bold;
+	font-size: .7em;
+
+	margin-left: 10px;
+}
+
+/*************************************************************************
+	P R O F I L E   P A G E
+*************************************************************************/
+.profile-page form label.item {
+
+}
+.profile-page form label.item.has-error {
+	border-left: 5px solid #FF4444;
+}
+.profile-page form label.item.has-success {
+	border-left: 5px solid #13CE06;
+	border-right: 5px solid #13CE06;
+}

@@ -1,0 +1,22 @@
+<ion-view view-title="InfoCrud App Login" align-title="left" hide-nav-bar="true">
+	<ion-content scroll="true" class="login-register-page">
+
+			<div class="wrapper">
+
+		        <h1>InfoCrud App</h1>
+
+				<div class="list">
+					<ion-login ng-show="!form.isRegister"></ion-login>
+					<ion-register ng-show="form.isRegister"></ion-register>
+				</div>
+
+				<div class="padding-bottom">
+					<button class="button button-full button-stable ink" ng-click="form.isRegister = !form.isRegister">
+						{{ form.isRegister ? 'Have an account?? Log in!' : 'Need an account?? Register!' }}
+					</button>
+				</div>
+
+	        </div>
+
+	</ion-content>
+</ion-view>

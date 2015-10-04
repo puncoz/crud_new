@@ -1,0 +1,71 @@
+<ion-view title="Profile" class="profile-page">
+	<ion-content padding="true">
+
+		<form name="profileForm" class="card" novalidate="" ng-submit="userProfile(profileForm)">
+
+			<div class="list">
+
+				<label class="item item-input item-stacked-label" ng-class="{'has-error' : profileForm.firstname.$dirty && profileForm.firstname.$invalid , 'has-success': profileForm.firstname.$dirty && profileForm.firstname.$valid }">
+					<span class="input-label">First Name
+						<span ng-show="profileForm.firstname.$dirty && profileForm.firstname.$error" ng-messages="profileForm.firstname.$error" ng-messages-include="templates/form-errors.html"></span>
+					</span>
+					<input type="text" name="firstname" ng-model="form.firstname" placeholder="Ram" required>
+				</label>
+
+				<label class="item item-input item-stacked-label" ng-class="{'has-error' : profileForm.lastname.$dirty && profileForm.lastname.$invalid , 'has-success': profileForm.lastname.$dirty && profileForm.lastname.$valid }">
+					<span class="input-label">Last Name
+						<span ng-show="profileForm.lastname.$dirty && profileForm.lastname.$error" ng-messages="profileForm.lastname.$error" ng-messages-include="templates/form-errors.html"></span>
+					</span>
+					<input type="text" name="lastname" ng-model="form.lastname" placeholder="Thapa" required>
+				</label>
+
+				<label class="item item-input item-stacked-label" ng-class="{'has-error' : profileForm.lastname.$dirty && profileForm.lastname.$invalid , 'has-success': profileForm.lastname.$dirty && profileForm.lastname.$valid }">
+					<span class="input-label">Gender
+						<span ng-show="profileForm.lastname.$dirty && profileForm.lastname.$error" ng-messages="profileForm.lastname.$error" ng-messages-include="templates/form-errors.html"></span>
+					</span>
+					<input type="radio" name="gender" ng-model="form.gender" required>
+					<!-- <input type="text" name="lastname" ng-model="form.lastname" placeholder="Thapa" required> -->
+				</label>
+
+				<label class="item item-input item-stacked-label" ng-class="{'has-error' : profileForm.email.$dirty && profileForm.email.$invalid , 'has-success': profileForm.email.$dirty && profileForm.email.$valid }">
+					<span class="input-label">Email
+						<span ng-show="profileForm.email.$dirty && profileForm.email.$error" ng-messages="profileForm.email.$error" ng-messages-include="templates/form-errors.html"></span>
+					</span>
+					<input type="email" name="email" ng-model="form.email" placeholder="ram@somedomain.com" ng-pattern="" required>
+				</label>
+
+				<label class="item item-input item-stacked-label" ng-class="{'has-error' : registerForm.username.$dirty && registerForm.username.$invalid , 'has-success': registerForm.username.$dirty && registerForm.username.$valid }">
+					<span class="input-label">Username
+						<span ng-show="registerForm.username.$dirty && registerForm.username.$error" ng-messages="registerForm.username.$error" ng-messages-include="templates/form-errors.html"></span>
+					</span>
+					<input type="text" name="username" ng-model="form.username" placeholder="ram.thapa" required>
+				</label>
+
+				<label class="item item-input item-stacked-label" ng-class="{'has-error' : registerForm.password.$dirty && registerForm.password.$invalid , 'has-success': registerForm.password.$dirty && registerForm.password.$valid }">
+					<span class="input-label">Password
+						<span ng-show="registerForm.password.$dirty && registerForm.password.$error" ng-messages="registerForm.password.$error" ng-messages-include="templates/form-errors.html">
+							<span class="form-error-message" ng-message="minlength">Password must be at least 8 characters.</span>
+						</span>
+					</span>
+					<input type="password" id="password" name="password" ng-model="form.password" placeholder="password" ng-minlength="8" required>
+				</label>
+
+				<label class="item item-input item-stacked-label" ng-class="{'has-error' : registerForm.confirmpass.$dirty && registerForm.confirmpass.$invalid , 'has-success': registerForm.confirmpass.$dirty && registerForm.confirmpass.$valid }">
+					<span class="input-label">Confirm Password
+						<span ng-show="registerForm.confirmpass.$dirty && registerForm.confirmpass.$error" ng-messages="registerForm.confirmpass.$error" ng-messages-include="templates/form-errors.html">
+							<span class="form-error-message" ng-message="compareTo">Doesn't match</span>
+						</span>
+					</span>
+					<input type="password" id="confirmpass" name="confirmpass" ng-model="form.confirmpass" placeholder="password" compare-to="form.password" required>
+				</label>
+
+
+
+		</div>
+				<button class="button button-block button-balanced" ng-disabled="registerForm.$invalid">
+					Register
+				</button>
+			</form>
+
+	</ion-content>
+</ion-view>

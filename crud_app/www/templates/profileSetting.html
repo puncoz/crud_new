@@ -1,0 +1,77 @@
+<ion-modal-view>
+
+	<!-- Header Bar -->
+	<ion-header-bar class="bar-dark" align-title="left">
+
+        <!-- Cancel Button -->
+        <button class="button button-clear button-icon ion-close-round" ng-click="modal.hide()">
+		</button>
+
+		<h1 class="title">Profile Settings</h1>
+
+	</ion-header-bar>
+
+	<!-- Modal Content -->
+	<ion-content class="padding">
+
+		<form name="profileForm" class="padding-bottom profile-form" novalidate="" ng-submit="profileSetting(profileForm)">
+
+			<div class="list card">
+
+				<label class="item item-input item-stacked-label" ng-class="{'has-error' : profileForm.firstname.$dirty && profileForm.firstname.$invalid , 'has-success': profileForm.firstname.$dirty && profileForm.firstname.$valid }">
+					<span class="input-label">First Name
+						<span ng-show="profileForm.firstname.$dirty && profileForm.firstname.$error" ng-messages="profileForm.firstname.$error" ng-messages-include="templates/form-errors.html"></span>
+					</span>
+					<input type="text" name="firstname" ng-model="form.firstname" placeholder="Ram" required>
+				</label>
+
+				<label class="item item-input item-stacked-label" ng-class="{'has-error' : profileForm.lastname.$dirty && profileForm.lastname.$invalid , 'has-success': profileForm.lastname.$dirty && profileForm.lastname.$valid }">
+					<span class="input-label">Last Name
+						<span ng-show="profileForm.lastname.$dirty && profileForm.lastname.$error" ng-messages="profileForm.lastname.$error" ng-messages-include="templates/form-errors.html"></span>
+					</span>
+					<input type="text" name="lastname" ng-model="form.lastname" placeholder="Thapa" required>
+				</label>
+
+				<label class="item item-input item-stacked-label" ng-class="{'has-error' : profileForm.gender.$dirty && profileForm.gender.$invalid , 'has-success': profileForm.gender.$dirty && profileForm.gender.$valid }">
+					<span class="input-label">Gender
+						<span ng-show="profileForm.gender.$dirty && profileForm.gender.$error" ng-messages="profileForm.gender.$error" ng-messages-include="templates/form-errors.html"></span>
+					</span>
+					<!-- <input type="radio" name="gender" ng-model="form.gender" required> -->
+					<ion-radio ng-model="form.gender" name="gender" ng-value="0" required>Male</ion-radio>
+					<ion-radio ng-model="form.gender" name="gender" ng-value="1" required>Female</ion-radio>
+				</label>
+
+			</div>
+
+			<button class="button button-block button-balanced" ng-disabled="profileForm.$invalid">
+				Save Changes
+			</button>
+		</form>
+
+	</ion-content>
+
+</ion-modal-view>
+
+<!-- <ion-modal-view>
+        <ion-header-bar class="bar bar-header bar-positive">
+          <h1 class="title">New Contact</h1>
+          <button class="button button-clear button-primary" ng-click="modal.hide()">Cancel</button>
+        </ion-header-bar>
+        <ion-content class="padding">
+          <div class="list">
+            <label class="item item-input">
+              <span class="input-label">First Name</span>
+              <input ng-model="newUser.firstName" type="text">
+            </label>
+            <label class="item item-input">
+              <span class="input-label">Last Name</span>
+              <input ng-model="newUser.lastName" type="text">
+            </label>
+            <label class="item item-input">
+              <span class="input-label">Email</span>
+              <input ng-model="newUser.email" type="text">
+            </label>
+            <button class="button button-full button-positive" ng-click="createContact(newUser)">Create</button>
+          </div>
+        </ion-content>
+</ion-modal-view> -->

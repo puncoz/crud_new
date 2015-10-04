@@ -1,0 +1,33 @@
+<ion-side-menus enable-menu-with-back-views="false">
+
+	<!-- Left Menu -->
+	<ion-side-menu side="left" width="250" expose-aside-when="large" enable-menu-with-back-views="false">
+		<ion-header-bar class="bar bar-header bar-stable">
+			<h1 class="title">CRUD Project</h1>
+		</ion-header-bar>
+
+		<ion-content>
+			<ion-sidenav></ion-sidenav>
+		</ion-content>
+	</ion-side-menu>
+
+	<!-- Main Content -->
+	<ion-side-menu-content>
+		<ion-nav-bar class="bar-royal">
+
+			<!-- Back Button -->
+			<ion-nav-back-button class="button button-royal button-icon icon ion-arrow-left-c ion-ios7-arrow-left">
+            </ion-nav-back-button>
+
+            <!-- Side Nav Button -->
+            <ion-nav-buttons side="left">
+				<button menu-toggle="left" class="button button-royal button-icon icon ion-navicon">
+				</button>
+			</ion-nav-buttons>
+
+		</ion-nav-bar>
+
+		<ion-nav-view name="appContent" animation="slide-left-right"></ion-nav-view>
+	</ion-side-menu-content>
+
+</ion-side-menus>

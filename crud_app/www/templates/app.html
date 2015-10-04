@@ -1,0 +1,44 @@
+<ion-side-menus enable-menu-with-back-views="false">
+
+	<!-- Left Menu -->
+	<ion-side-menu side="left" expose-aside-when="large" enable-menu-with-back-views="false">
+
+		<!-- Header Bar -->
+		<ion-header-bar class="dark-bg expanded">
+            <span class="avatar" style="background: url('img/logo.png'); background-size: cover;"></span>
+            <h2>InfoCrud App</h2>
+        </ion-header-bar>
+
+        <!-- Menu Content -->
+        <ion-nav-view name="sideMenu"></ion-nav-view>
+
+	</ion-side-menu>
+
+
+	<!-- Main Content -->
+	<ion-side-menu-content>
+
+		<!-- Header Bar -->
+		<ion-nav-bar class="bar-dark" ng-class="{expanded: isExpanded, 'has-header-fab-left': hasHeaderFabLeft, 'has-header-fab-right': hasHeaderFabRight}" align-title="left">
+
+			<!-- Back Button -->
+			<ion-nav-back-button class="button button-royal button-icon icon ion-arrow-left-c ion-ios7-arrow-left">
+            </ion-nav-back-button>
+
+            <!-- Side Nav Button -->
+            <ion-nav-buttons side="left">
+				<button menu-toggle="left" class="button button-clear button-icon icon ion-navicon">
+				</button>
+			</ion-nav-buttons>
+
+		</ion-nav-bar>
+
+		<!-- FabIcon -->
+		<ion-nav-view name="fabContent"></ion-nav-view>
+
+		<!-- Main Content View -->
+		<ion-nav-view name="mainContent" ng-class="{expanded: isExpanded}" ></ion-nav-view>
+
+	</ion-side-menu-content>
+
+</ion-side-menus>
